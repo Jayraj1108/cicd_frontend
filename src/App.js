@@ -4,7 +4,7 @@ import axios from 'axios';
 import './App.css';
 import './form.css';
 
-const apiUrl = process.env.REACT_APP_API_URL;
+const apiUrl = "104.197.129.27";
 
 function App() {
   const [first_name, setFirstName] = useState('');
@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get(`http://35.193.197.235/list_users`);
+        const response = await axios.get(`http://104.197.129.27/list_users`);
         setUsers(response.data);
       } catch (error) {
         console.error('Error fetching users:', error);
@@ -36,7 +36,7 @@ function App() {
     };
 
     try {
-      await axios.post(`http://35.193.197.235/add_user`, data, {
+      await axios.post(`http://104.197.129.27/add_user`, data, {
         headers: {
           'Content-Type': 'application/json',
         }
